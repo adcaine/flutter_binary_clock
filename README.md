@@ -1,2 +1,2 @@
-# flutter_binary_clock
+# flutter Binary Clock
 Flutter Binary Clock
