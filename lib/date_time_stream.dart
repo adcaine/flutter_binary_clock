@@ -7,7 +7,6 @@ import 'dart:async';
 /// This class emits a stream of [DateTime] objects at interval [Duration].
 ///
 class DateTimeStream {
-
   StreamController<DateTime> _streamController;
 
   DateTimeStream({Duration duration = const Duration(seconds: 1)}) {
@@ -25,6 +24,4 @@ class DateTimeStream {
   void _updateTime(Timer timer) {
     _streamController.sink.add(DateTime.now());
   }
-
-
 }

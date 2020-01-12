@@ -32,18 +32,19 @@ class LightBulb extends StatelessWidget {
         AnimatedContainer(
           duration: duration,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isOn ? onColor : offColor,
-            border: Border.all(color: isOn ? onColor : borderColor)
-          ),
+              shape: BoxShape.circle,
+              color: isOn ? onColor : offColor,
+              border: Border.all(color: isOn ? onColor : borderColor)),
           width: diameter,
           height: diameter,
         ),
-        Text(text, style: TextStyle(
-          fontSize: diameter - 4,
-          color: offColor,
-          decoration: TextDecoration.none
-        ),)
+        Text(
+          text,
+          style: TextStyle(
+              fontSize: diameter - 4,
+              color: offColor,
+              decoration: TextDecoration.none),
+        )
       ],
     );
   }

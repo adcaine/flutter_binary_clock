@@ -10,7 +10,6 @@ import 'full_clock_display.dart';
 void main() => runApp(BinaryClockApplication());
 
 class BinaryClockApplication extends StatelessWidget {
-
   final DateTimeStream _dateTimeStream = DateTimeStream();
 
   @override
@@ -32,6 +31,3 @@ class BinaryClockApplication extends StatelessWidget {
     );
   }
 }
-
-
-

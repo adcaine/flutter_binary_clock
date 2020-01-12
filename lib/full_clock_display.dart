@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 
 class FullClockDisplay extends StatelessWidget {
-
   final DateTime dateTime;
 
   FullClockDisplay({@required this.dateTime});
