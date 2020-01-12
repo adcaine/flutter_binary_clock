@@ -3,7 +3,35 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_binary_clock/date_time_stream.dart';
 
-void main() => runApp(Container());
+import 'full_clock_display.dart';
+
+void main() => runApp(BinaryClockApplication());
+
+class BinaryClockApplication extends StatelessWidget {
+
+  final DateTimeStream _dateTimeStream = DateTimeStream();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeArea(
+        child: Center(
+          child: StreamBuilder<DateTime>(
+            initialData: DateTime.now(),
+            stream: _dateTimeStream.stream,
+            builder: (context, snapshot) {
+              return FullClockDisplay(
+                dateTime: snapshot.data,
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
