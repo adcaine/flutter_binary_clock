@@ -46,7 +46,7 @@ class MinorSection extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: LightBulbArray(
             onColor: onColor,
-            offColor: onColor,
+            offColor: offColor,
             borderColor: borderColor,
             duration: duration,
             displayValue: displayValue % 10,
