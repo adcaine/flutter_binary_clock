@@ -48,7 +48,7 @@ class LightBulbArray extends StatelessWidget {
         diameter: diameter,
         duration: duration,
         borderColor: borderColor,
-        isOn: ((displayValue >> (size - 1 - index)) & 1) == 1,
+        isOn: ((displayValue >> bitPosition) & 1) == 1,
         text: "$decimalValue",
       ),
     );
