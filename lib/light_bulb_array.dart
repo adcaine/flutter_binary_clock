@@ -34,12 +34,12 @@ class LightBulbArray extends StatelessWidget {
     return Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
+        verticalDirection: VerticalDirection.up,
         children: List.generate(size, _getLightBulbAt));
   }
 
   Widget _getLightBulbAt(int index) {
-    final int bitPosition = size - 1 - index;
-    final int decimalValue = pow(2, bitPosition);
+    final int decimalValue = pow(2, index);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: LightBulb(
@@ -48,7 +48,7 @@ class LightBulbArray extends StatelessWidget {
         diameter: diameter,
         duration: duration,
         borderColor: borderColor,
-        isOn: ((displayValue >> bitPosition) & 1) == 1,
+        isOn: ((displayValue >> index) & 1) == 1,
         text: "$decimalValue",
       ),
     );
