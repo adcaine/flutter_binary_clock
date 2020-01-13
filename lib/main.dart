@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_binary_clock/date_time_stream.dart';
-import 'package:flutter/services.dart';
 
 import 'full_clock_display.dart';
 
@@ -15,10 +14,6 @@ class BinaryClockApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ]);
     return MaterialApp(
       home: SafeArea(
         child: Center(
@@ -26,8 +21,14 @@ class BinaryClockApplication extends StatelessWidget {
             initialData: DateTime.now(),
             stream: _dateTimeStream.stream,
             builder: (context, snapshot) {
-              return FullClockDisplay(
-                dateTime: snapshot.data,
+              return SingleChildScrollView(
+                scrollDirection:
+                    MediaQuery.of(context).orientation == Orientation.portrait
+                        ? Axis.horizontal
+                        : Axis.vertical,
+                child: FullClockDisplay(
+                  dateTime: snapshot.data,
+                ),
               );
             },
           ),
