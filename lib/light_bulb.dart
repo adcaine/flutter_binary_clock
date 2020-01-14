@@ -42,7 +42,7 @@ class LightBulb extends StatelessWidget {
           text,
           style: TextStyle(
               fontSize: diameter - 4,
-              color: offColor,
+              color: isOn ? offColor : Color(0x0FFFFFFF),
               decoration: TextDecoration.none),
         )
       ],
